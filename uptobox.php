@@ -1,7 +1,7 @@
 <?php
-$token = "";
+$token = "5b3c765c8b044afa3dd4d5fe70d4baea4bsgi";
 	
-$code="";
+$code="5b3c765c8b044afa3dd4d5fe70d4baea4bsgi";
 if ($_GET['code'] != null && $_GET['code'] != ""){
 	$code = $_GET['code'];
 }
