@@ -1,5 +1,5 @@
 <?php
-$token = "[USER_TOKEN]";
+$token = $token;
 	
 $code="";
 if ($_GET['code'] != null && $_GET['code'] != ""){
@@ -27,7 +27,7 @@ if ($esito=="0"){
 	$message = $jsonData['message'];
 }
 
-$toRet = ;
+$toRet = "";
 if ($link == ""){
 	$link = "";
 	$name = $message;
