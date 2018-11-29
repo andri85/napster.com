@@ -27,7 +27,7 @@ if ($esito=="0"){
 	$message = $jsonData['message'];
 }
 
-$toRet = "l5j6np65u9wg";
+$toRet = "http://uptobox.com/1qwebmfefqgj/";
 if ($link == ""){
 	$link = "";
 	$name = $message;
