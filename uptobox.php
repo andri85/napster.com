@@ -1,5 +1,5 @@
 <?php
-$token = "[USER_TOKEN]";
+$token = 5b3c765c8b044afa3dd4d5fe70d4baea4bsgi;
 
 $code="";
 if ($_GET['code'] != null && $_GET['code'] != ""){
@@ -29,7 +29,7 @@ if ($esito=="0"){
 
 $toRet = "";
 if ($link == ""){
-	$link = "http://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4";
+	$link = "";
 	$name = $message;
 }
 if ($type == "json"){
