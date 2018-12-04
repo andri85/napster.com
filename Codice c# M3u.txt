@@ -19,8 +19,6 @@ namespace Console_CMD
 
             string token = "";
             
-            string path = @"C:\\Txt\\BabilJunior.txt";
-
             string m3u = "#EXTM3U \n\n";
 
             string lines;
