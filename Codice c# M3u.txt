@@ -18,7 +18,9 @@ namespace Console_CMD
             string vlc_links = "";
 
             string token = "";
-                   
+            
+            string path = @"C:\\Txt\\BabilJunior.txt";
+
             string m3u = "#EXTM3U \n\n";
 
             string lines;
@@ -33,7 +35,7 @@ namespace Console_CMD
             string file_input = Console.ReadLine();
 
 
-            if (File.Exists(file_input)){ 
+            if (!File.Exists(file_input)){ 
 
             StreamReader streamReader = new StreamReader(file_input);
             
@@ -68,3 +70,4 @@ namespace Console_CMD
         }
     }
 }
+
