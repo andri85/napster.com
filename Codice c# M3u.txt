@@ -35,7 +35,7 @@ namespace Console_CMD
 
             if (File.Exists(file_input)){ 
 
-            StreamReader streamReader = new StreamReader(path);
+            StreamReader streamReader = new StreamReader(file_input);
             
             while ((lines = streamReader.ReadLine()) != null)
             {
