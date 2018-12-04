@@ -33,7 +33,7 @@ namespace Console_CMD
             string file_input = Console.ReadLine();
 
 
-            if (!File.Exists(file_input)){ 
+            if (File.Exists(file_input)){ 
 
             StreamReader streamReader = new StreamReader(file_input);
             
