@@ -1,5 +1,5 @@
 <?php
-$token = "[USER_TOKEN]";
+$token = "5b3c765c8b044afa3dd4d5fe70d4baea4bsgi";
 if ($_GET['token'] != null && $_GET['token'] != ""){
 	$token = $_GET['token'];
 }
