@@ -32,7 +32,7 @@ if ($esito=="0"){
 
 $toRet = "";
 if ($link == ""){
-	$link = "http://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4";
+	$link = "";
 	$name = $message;
 }
 if ($type == "json"){
