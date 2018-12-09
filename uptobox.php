@@ -30,7 +30,7 @@ if ($esito=="0"){
 	$message = $jsonData['message'];
 }
 
-$toRet = "";
+$toRet =;
 if ($link == ""){
 	$link = "";
 	$name = $message;
