@@ -26,8 +26,10 @@ namespace Gestione_File_Stream
 
                 string path = @"C:\\Temp\\Kodi\\";
 
-                if (Directory.Exists(path))
+                if (!Directory.Exists(path))
                 {
+
+                    DirectoryInfo directoryInfo = Directory.CreateDirectory(path);
 
                     string lines;
 
@@ -44,11 +46,7 @@ namespace Gestione_File_Stream
 
                         string lines_1 = lines.Replace(",", "");
                           
-                        String[] splitta = lines_1.Split('/');
-
-                        for (int x = 0; x < splitta.Length - 4; x++)
-
-                        {
+                            String[] splitta = lines_1.Split('/');
 
                             file_name = splitta[4];
 
@@ -58,9 +56,8 @@ namespace Gestione_File_Stream
 
                             counter++;
 
-                        }
 
-                        File.WriteAllText(@"C:\\Temp\\Kodi\\" + file_name + ".strm", vlc_napster_link + codice_uptobox);
+                        File.WriteAllText(path + file_name + ".strm", vlc_napster_link + codice_uptobox);
 
                     }
 
