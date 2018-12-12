@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+namespace Gestione_File_M3u
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string vlc_napster_link = "https://napster85.herokuapp.com/uptobox.php?type=m3u&code=";
+
+            Console.Title = "Gestione File Plex by Napster&ElSupremo";
+
+        MENU:
+
+
+            Console.BackgroundColor = ConsoleColor.Black;
+
+            Console.ForegroundColor = ConsoleColor.Blue;      
+
+            Console.Write("Inserisci percorso file di input!:");
+
+            string path_input = Console.ReadLine();
+            
+
+            if (File.Exists(path_input))
+            {
+                string path = @"C:\\Temp\\M3u\\";
+
+                if (!Directory.Exists(path))
+
+                {
+                    DirectoryInfo directoryInfo = Directory.CreateDirectory(@"C:\\Temp\\M3u\\");
+                }
+                int counter = 0;
+
+                string lines;
+
+                string m3u = "#EXTM3U \n\n";
+
+                StreamReader streamReader = new StreamReader(path_input);
+
+                while ((lines = streamReader.ReadLine()) != null)
+
+
+                {
+
+                    string lines_1 = lines.Replace(",", "");
+
+                    String[] splitta_titolo = lines_1.Split('/');
+
+                    string titolo = splitta_titolo[4];
+
+                    string codice = splitta_titolo[3];
+
+                    Console.WriteLine($"ADD {titolo} TO LIST");
+
+                    m3u += "#EXTINF: -1, " + titolo + "\n" + vlc_napster_link + codice + "\n\n";
+                    
+                    counter++;
+                }
+
+                streamReader.Close();
+
+                File.WriteAllText(path + "Napster.m3u", m3u);
+
+                Console.WriteLine($"File Napster.m3u creato in: {path}");
+            }
+
+            else
+
+            {
+
+                Console.WriteLine("IL FILE NON ESISTE");
+            }
+
+
+            Console.ReadKey();
+
+            Console.Clear();
+
+            goto MENU;
+        }
+    }
+}
