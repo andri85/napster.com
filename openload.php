@@ -14,7 +14,7 @@
 		$type = $_GET['type'];
 	}
 	
-	$url="https://api.openload.co/".$token."&id=".$code;
+	$url="https://api.openload.co/1/file/dlticket?file={file}&login={login}&key={key}".$code;
 	$return = file_get_contents($url);
 	
 	$jsonData = json_decode($return, true);
